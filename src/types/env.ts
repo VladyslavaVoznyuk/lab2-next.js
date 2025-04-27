@@ -1,10 +1,9 @@
-declare namespace NodeJS {
-    export interface ProcessEnv {
+interface ProcessEnv {
+    DATABASE_URL: string;
+}
 
-        ENV_WELCOME: string
-        NEXT_PUBLIC_WELCOME: string
-        ENV_DEM:string
-        ENV_BROWSE:string
-
+declare global {
+    namespace NodeJS {
+        interface ProcessEnv extends ProcessEnv {}
     }
 }
